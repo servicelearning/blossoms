@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events | BLOSSOMS 2018-19</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+<style type="text/css">
+
+	/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+table{
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+td{
+	padding: 20px;
+}
+.flip-card {
+  background-color: transparent;
+  width: 600px;
+  height: 350px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: inline-block;
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back-art {
+  background:url("artback.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-back-stage {
+  background:url("stageback.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-back-literary {
+  background:url("litback.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-back-theatre {
+  background:url("thback.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-back-extr {
+  background:url("extback.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial;
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+div>h1{
+	margin-top:30px;
+  font-weight: 600;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 50px;
+}
+  .background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url("eventbg.jpg");
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  
+}
+.content {
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.logo{
+  height: 86px;
+  width: 280px;
+  margin-top: 20px;
+}
+.clg{
+  font-size: 30px;
+  margin-top: 20px;
+  color: white;
+  font-weight: 600;
+}
+.navbar{
+  text-align: left;
+}
+</style>
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+<div style="display:none;" id="myDiv" class="animate-bottom">
+<!--...................................NAVBAR...............................................-->
+<div class="background-image"></div>
+<div class="content">
+	<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" style="color: white" href="index.html">Blossoms 2018-19</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="schedule.html">Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="guidelines.html">General Guidelines</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="strategy.html">Schedule of Strategy</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--......................................................................................................-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-2">
+      <a href="christuniversity.in"><img class="logo" src="logo.png"></a>
+    </div>
+     <div class="col-xl-6"></div>
+    <div class="col-xl-4 clg">
+      <h3>FACULTY OF ENGINEERING</h3>
+      <h3>AND</h3>
+      <h3>SCHOOL OF ARCHITECTURE</h3>
+    </div>
+  </div>
+</div>
+<h1 align="center" style="margin-bottom: 30px; font-weight: 600; font-size: 60px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">EVENTS</h1>
+  <div class="container-fluid">
+		<div class="row">
+      <div class="col-sm-12 col-xl-6 col-md-12 col-lg-12 col-sm-10">
+		    <div class="flip-card">
+  				<div class="flip-card-inner">
+    				<div class="flip-card-front">
+      				<img src="artf.jpg" alt="Avatar" style="width:600px;height:350px;">
+      				<div class="centered">ART</div>
+    				</div>
+    				<div class="flip-card-back-art">
+      					<h1>ART</h1> 
+                <hr>
+      					<p>Express your imagination and create.</p>
+      					<p>Come take part in the art events and explore your creative side.</p>
+      					<a class="btn btn-primary" href="art.html" role="button">Know More</a>
+    				</div>
+  				</div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-xl-6 col-md-12 col-lg-12 col-sm-10">
+		    <div class="flip-card">
+  				<div class="flip-card-inner">
+    				<div class="flip-card-front">
+      					<img src="stagef.jpg" alt="Avatar" style="width:600px;height:350px;">
+      					<div class="centered">STAGE</div>
+    				</div>
+    				<div class="flip-card-back-stage">
+      					<h1>STAGE</h1>
+                <hr>
+                <p>Rock the audience</p>
+                <p>Come take part in the stage events like music and dance</p>
+      					<a class="btn btn-primary" href="stage.html" role="button">Know More</a>
+    				</div>
+  				</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">      
+       <div class="col-sm-12 col-xl-6 col-md-12 col-lg-12 col-sm-10">
+		      <div class="flip-card">
+  				  <div class="flip-card-inner">
+    				  <div class="flip-card-front">
+      					<img src="litf.png" alt="Avatar" style="width:600px;height:350px;">
+      					<div class="centered">LITERARY</div>
+    				  </div>
+    				  <div class="flip-card-back-literary">
+      					<h1>LITERARY</h1>
+                <hr>
+      					<p>A world of words.</p> 
+      					<p>Sharpen your literary skills by taking part in fun events like debates and dumb charades</p>
+      					<a class="btn btn-primary" href="lit.html" role="button">Know More</a>
+    				  </div>
+  				  </div>
+			</div>
+    </div>
+    <div class="col-sm-12 col-xl-6 col-md-12 col-lg-12 col-sm-10">
+		  <div class="flip-card">
+  			<div class="flip-card-inner">
+    			<div class="flip-card-front">
+      			<img src="thf.jpg" alt="Avatar" style="width:600px;height:350px;">
+      			<div class="centered">THEATRE</div>
+    			</div>
+    			<div class="flip-card-back-theatre">
+      			<h1>THEATRE</h1>
+            <hr>
+      			<p>The expression of imagination</p> 
+      			<p>Mesmerize the audience with drama performances in this event</p>
+      			<a class="btn btn-primary" href="theatre.html" role="button">Know More</a>
+    			</div>
+  			</div>
+			</div>
+    </div>
+  </div>
+
+  <div class="row">      
+       <div class="col-sm-12 col-xl-12 col-md-12 col-lg-12 col-sm-12">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="extf.jpg" alt="Avatar" style="width:600px;height:350px;">
+                <div class="centered">INTER DEANERY DANCE EXTRAVAGANZA</div>
+              </div>
+              <div class="flip-card-back-extr">
+                <h1>INTER DEANERY DANCE EXTRAVAGANZA</h1>
+                <hr>
+                <p>The biggest dance competition in Christ University</p>
+                <p>Team up with your deanery and compete for the trophy of best dance team in Christ University</p>                
+                <a class="btn btn-primary" href="extr.html" role="button">Know More</a>
+              </div>
+            </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+		<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage,0);
+}
+
+function showPage() {
+  
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</body>
+</html>

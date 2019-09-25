@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blossoms 2018-19 | Faculty of Engineering</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <style type="text/css">
+
+    body, html {
+  height: 100%;
+  background-color: black;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.btn{
+  margin:5px;
+  }
+  .logo{
+  height: 86px;
+  width: 280px;
+  margin-top: 115px;
+  
+}
+.clg{
+  font-size: 50px;
+  margin-top: 110px;
+  color: white;
+  font-weight: bolder;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.container-fluid{
+  font-weight: bolder;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+.info{
+  padding: 20px;
+}
+.jumbotron{
+  margin-top: 60px;
+  z-index: 999;
+  background: rgba(255,255,255,.8);
+
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+.hitcounter{
+  text-align: center;
+}
+.lightnavbar{
+  background-color: #FFFFFF; opacity: 0.5; filter: alpha(opacity=50);
+}
+.crossfade{
+    z-index: 1;
+}
+        .crossfade > figure {
+  animation: imageAnimation 30s linear infinite 0s;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center center;
+  color: transparent;
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 0;
+}
+.crossfade > figure:nth-child(1) { background-image: url('slide1.jpg'); 
+background-size: cover;}
+
+.crossfade > figure:nth-child(2) {
+  animation-delay: 6s;
+  background-image: url('slide2.jpg');
+}
+
+.crossfade > figure:nth-child(3) {
+  animation-delay: 12s;
+  background-image: url('slide3.jpg');
+}
+
+.crossfade > figure:nth-child(4) {
+  animation-delay: 18s;
+  background-image: url('slide4.jpg');
+}
+.crossfade > figure:nth-child(5) {
+  animation-delay: 18s;
+  background-image: url('slide5.jpg');
+}
+.crossfade > figure:nth-child(6) {
+  animation-delay: 18s;
+  background-image: url('slide6.jpg');
+}
+.crossfade > figure:nth-child(7) {
+  animation-delay: 18s;
+  background-image: url('slide7.jpg');
+}
+
+@keyframes 
+imageAnimation {  0% {
+ animation-timing-function: ease-in;
+ opacity: 0;
+}
+ 8% {
+ animation-timing-function: ease-out;
+ opacity: 1;
+}
+ 17% {
+ opacity: 1
+}
+ 25% {
+ opacity: 0
+}
+ 100% {
+ opacity: 0
+}
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="">
+  <a class="navbar-brand" href="#" style="color: white">Blossoms 2018-19</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="events.html">Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="schedule.html">Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="guidelines.html">General Guidelines</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="strategy.html">Schedule of Strategy</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div class="crossfade">
+    <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+</div>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-xl-4">
+      <a href="christuniversity.in"><img class="logo" src="logo.png"></a>
+    </div>
+     <div class="col-xl-4"></div>
+    <div class="col-xl-4 clg" align="center">
+      <h3>FACULTY OF ENGINEERING</h3>
+      <h3>AND</h3>
+      <h3>SCHOOL OF ARCHITECTURE</h3>
+    </div>
+  </div>
+</div>
+  <div class="jumbotron vertical-center">
+        <div class="container">
+  <h1 class="display-3"><strong>BLOSSOMS 2018-19</strong></h1>
+  <p class="lead">Come, be a part of Blossoms 2018-19</p>
+  <hr class="display-2">
+  <p>It's all about art, stage literary and theatre.</p>
+  </div>
+</div>
+<nav class="navbar navbar-expand-lg fixed-bottom navbar-light bg-light lightnavbar">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><i class="far fa-copyright"></i><span class="info">Christ University</span>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a href="http://www.reliablecounter.com" target="_blank"><img src="https://www.reliablecounter.com/count.php?page=10359309&digit=style/plain/5/&reloads=0" alt="" title="" border="0"></a><br /><a href="http://  www.reliablecounter.com/blog/the-best-flexible-solar-panels-in-2019-the-ultimate-guide/" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;"></a>
+      </li>
+    </ul>
+</nav>
+</body>
+</html>

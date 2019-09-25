@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Schedule | BLOSSOMS 2018-19</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <style>
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url(11.jpg) no-repeat center center fixed; 
+  background-size: cover; 
+  padding-top: 30px;
+        }
+        
+        /* The actual timelineold (the vertical ruler) */
+        .timelineold {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+            /* The actual timelineold (the vertical ruler) */
+            .timelineold::after {
+                content: '';
+                position: absolute;
+                width: 6px;
+                background-color:white;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                margin-left: -3px;
+            }
+
+        /* containerold around content */
+        .containerold {
+            padding: 10px 40px;
+            position: relative;
+            background-color:inherit;
+            width: 50%;
+        }
+
+            /* The circles on the timelineold */
+            .containerold::after {
+                content: '';
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                right: -17px;
+                background-color: snow;
+                border: 4px solid #FF9F55;
+                top: 15px;
+                border-radius: 50%;
+                z-index: 1;
+            }
+
+        /* Place the containerold to the left */
+        .left {
+            left: 0;
+        }
+
+        /* Place the containerold to the right */
+        .right {
+            left: 50%;
+        }
+
+        /* Add arrows to the left containerold (pointing right) */
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        /* Add arrows to the right containerold (pointing left) */
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        /* Fix the circle for containers on the right side */
+        .right::after {
+            left: -12px;
+        }
+        .left::after {
+            right: -12px;
+        }
+
+        /* The actual content */
+        .content {
+            padding: 20px 30px;
+            background-color:whitesmoke;
+            opacity: 0.7;
+            position: relative;
+            border-radius: 6px;
+        }
+          
+        /* Media queries - Responsive timelineold on screens less than 600px wide */
+        @media screen and (max-width: 600px) {
+            /* Place the timelime to the left */
+            .timelineold::after {
+                left: 31px;
+            }
+
+            /* Full-width containers */
+            .containerold {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+                /* Make sure that all arrows are pointing leftwards */
+                .containerold::before {
+                    left: 60px;
+                    border: medium solid white;
+                    border-width: 10px 10px 10px 0;
+                    border-color: transparent white transparent transparent;
+                }
+            .right {
+                left: 0%;
+            }
+        }
+        td{
+            font-weight: 600;
+        }
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+#myDiv {
+  display: none;
+  text-align: center;
+}
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+.logo{
+  height: 86px;
+  width: 280px;
+  margin-top: 20px;
+}
+.clg{
+  font-size: 30px;
+  margin-top: 20px;
+  color: white;
+  font-weight: 600;
+}
+.navbar{
+    text-align: left;
+}
+</style>
+}
+</head>
+<body onload="myFunction()" style="margin:0;">
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="">
+  <a class="navbar-brand" href="index.html" style="color: white">Blossoms 2018-19</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="events.html">Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="guidelines.html">General Guidelines</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="strategy.html">Schedule of Strategy</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-xl-2">
+      <a href="christuniversity.in"><img class="logo" src="logo.png"></a>
+    </div>
+     <div class="col-xl-6"></div>
+    <div class="col-xl-4 clg" align="center">
+      <h3>FACULTY OF ENGINEERING</h3>
+      <h3>AND</h3>
+      <h3>SCHOOL OF ARCHITECTURE</h3>
+    </div>
+  </div>
+</div>
+<h1 align="center" style="margin-bottom: 30px; font-weight: 600; font-size: 60px; color: white">SCHEDULE</h1>
+    <div class="timelineold">
+        <div class="containerold left">
+            <div class="content">
+                <h1>MONDAY : 10/12/18</h1>
+                <table class="table" >
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">EVENT :</th>
+                        <th scope="col">VENUE :</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>RANGOLI</td> 
+                        <td>3rd Block, 1st floor, room no. 324</td>
+                        </TR>
+                    <tr>
+                        <td>PAINT</td>
+                        <td>3rd Block, 1st floor, Foyer </td>
+                        </TR>
+                    <tr>
+                        <td>POT ART</td>
+                        <td>3rd Block, Ground floor, Foyer </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="containerold right">
+            <div class="content">
+                <h1>TUESDAY : 11/12/18</h1>
+                 <table class="table" >
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">EVENT :</th>
+                        <th scope="col">VENUE :</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>CARTOONING </td>
+                        <td>3rd Block,1st floor,room no. 314</td>
+                    </tr>
+                    <tr>
+                        <td>POSTER PAINTING</td>
+                        <td>Open Auditorium </td>
+                    </tr>
+                  </tbody>
+
+                </table>
+            </div>
+        </div>
+        <div class="containerold left">
+            <div class="content">
+                <h1>WEDNESDAY : 12/12/18</h1>
+                 <table class="table" >
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">EVENT :</th>
+                        <th scope="col">VENUE :</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>POT POURRI</td>
+                        <td>3rd Block, 2nd Floor, room no. 330</td>
+                    </tr>
+                    <tr>
+                        <td>DEBATE (PRELIMS)</td>
+                        <td>3rd  Block, 4th Floor, room no. 370 </td>
+                    </tr>
+                    <tr>
+                        <td>QUIZ (PRELIMS)</td>
+                        <td>3rd Block, 2nd Floor, room no. 332 </td>
+                    </tr>
+                </tbody>
+                </table>
+                
+            </div>
+        </div>
+        <div class="containerold right">
+            <div class="content">
+                <h1>THURSDAY : 13/12/18</h1>
+                 <table class="table" >
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">EVENT :</th>
+                        <th scope="col">VENUE :</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>EXTEMPORE</td>
+                        <td>3rd Block, 2nd Floor, room no. 335</td>
+                    </tr>
+                    <tr>
+                        <td>DUMB CHARDES</td>
+                        <td>2nd Block, Ground Floor, room no 213 </td>
+                    </tr>
+                    <tr>
+                        <td>JAM</td>
+                        <td>3rd Block, 2nd Floor, room no. 329 </td>
+                    </tr>
+                    <tr>
+                        <td>DEBATE(FINALS)</td>
+                        <td>2nd Block, Ground Floor, room no 203</td>
+                    </tr>
+                    <tr>
+                        <td>QUIZ(FINALS)</td>
+                        <td>3rd  Block, 4th Floor, room no. 370</td>
+                    </tr>
+                </tbody>
+                </table>
+
+            </div>
+        </div>
+        <div class="containerold left">
+            <div class="content">
+                <h1>SATURDAY : 15/12/18</h1>
+                 <table class="table" >
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">EVENT :</th>
+                        <th scope="col">VENUE :</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>CLASSICAL DANCE (SOLO)</td>
+                        <td>Open Auditorium</td>
+                    </tr>
+                    <tr>
+                        <td>NON THEME DANCE (GROUP)</td>
+                        <td>Open Auditorium</td>
+                    </tr>
+                   </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="containerold right">
+            <div class="content">
+                <h1>MONDAY : 17/12/18</h1>
+                 <table class="table" >
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">EVENT :</th>
+                        <th scope="col">VENUE :</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>WESTERN ELECTRIC GROUP</td>
+                        <td>Open Auditorium</td>
+                    </tr>
+                    <tr>
+                        <td>WESTERN ACAPELLA GROUP</td>
+                        <td>Open Auditorium </td>
+                    </tr>
+                    <tr>
+                        <td>STREET THEATRE</td>
+                        <td>Open Auditorium (01:00pm) </td>
+                    </tr>
+                   
+                    <tr>
+                        <td>PROSCENIUM</td>
+                        <td>3rd  Block, Auditorium (12:05pm)</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="containerold left">
+            <div class="content">
+                <h1>TUESDAY : 18/12/18</h1>
+                 <table class="table" >
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">EVENT :</th>
+                        <th scope="col">VENUE :</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>INDIAN MUSIC GROUP)</td>
+                        <td>Open Auditorium</td>
+                    </tr>
+                   </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage,0);
+}
+
+function showPage() {
+  
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</body>
+</html>

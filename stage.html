@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stage | Events</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600" rel="stylesheet">
+<style type="text/css">
+
+    /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+table{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+td{
+    padding: 20px;
+}
+.flip-card {
+  background-color: transparent;
+  width: 600px;
+  height: 600px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  display: inline-block;
+  align-self: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back-one {
+  background:url("classical2.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-back-two {
+  background:url("nontheme2.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-back-three {
+  background:url("indianmusic2.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.flip-card-back-four {
+  background:url("indianmusic2.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-size: ;
+}
+.flip-card-back-five {
+  background:url("Acapella.jpg");
+  color: white;
+  transform: rotateY(180deg);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Arial;
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+div>h1{
+    margin-top:30px;
+  font-weight: 600;
+}
+body{
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 50px;
+}
+  .background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  background-image: url("stage.jpeg");
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+  
+}
+.content {
+  position: relative;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.logo{
+  height: 86px;
+  width: 280px;
+  margin-top: 20px;
+}
+.clg{
+  font-size: 30px;
+  margin-top: 20px;
+  color: white;
+  font-weight: 600;
+}
+.navbar{
+  text-align: left;
+}
+.flip-card-back{
+    text-align: left;
+    width: 600px;
+    height: 600px;
+    background-image: url("classical2.jpg");
+}
+.info{
+    margin-left: 20px;
+}
+</style>
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+<div style="display:none;" id="myDiv" class="animate-bottom">
+<!--...................................NAVBAR...............................................-->
+<div class="background-image"></div>
+<div class="content">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+  <a class="navbar-brand" style="color: white" href="index.html">Blossoms 2018-19</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link active" href="events.html">Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="schedule.html">Schedule</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="guidelines.html">General Guidelines</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="strategy.html">Schedule of Strategy</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--......................................................................................................-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-2">
+      <a href="christuniversity.in"><img class="logo" src="logo.png"></a>
+    </div>
+     <div class="col-xl-6"></div>
+    <div class="col-xl-4 clg">
+      <h3>FACULTY OF ENGINEERING</h3>
+      <h3>AND</h3>
+      <h3>SCHOOL OF ARCHITECTURE</h3>
+    </div>
+  </div>
+</div>
+<h1 align="center" style="margin-bottom: 30px; font-weight: 600; font-size: 60px; color: white; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">STAGE EVENTS</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12 col-xl-6 col-md-12 col-lg-12 col-sm-10">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                    <img src="classical2.jpg" style="width:600px;height:600px;">
+                    <div class="centered">INDIAN DANCE CLASSICAL(SOLO)</div>
+                    </div>
+                    <div class="flip-card-back-one flip-card-back">
+                        <h1 align="center">INDIAN DANCE CLASSICAL(SOLO)</h1> 
+                        <hr>
+                        <ul>
+                            <li>Time: 4+1 mins on stage.</li>
+                            <li>Only Authentic Classical music/song to be used.</li>
+                            <li>No film songs will be allowed</li>
+                            <li>Top 2 teams will be selected for finals on 8 to 9 Feb, 2019</li>
+                            <br>
+                            <i class="far fa-calendar-alt" ></i><span class="info">Saturday, 15th of December 2018</span>
+                            <br>
+                            <i class="fas fa-map-marker"></i><span class="info">Open Auditorium</span>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-xl-6 col-md-12 col-lg-12 col-sm-10">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                    <img src="nontheme2.JPG" style="width:600px;height:600px;">
+                    <div class="centered">INDIAN DANCE GROUP: NON THEME (FILM/FOLK)</div>
+                    </div>
+                    <div class="flip-card-back-two flip-card-back">
+                        <h1 align="center">INDIAN DANCE GROUP: NON THEME (FILM/FOLK)</h1> 
+                        <hr>
+                        <ul>
+                            <li>No fusion of songs (single song to be used)</li>
+                            <li>The songs must have lyrics.</li>
+                            <li>Min 6 and max 15 members in a team</li>
+                            <li>Minimum props will be allowed.</li>
+                            <li>No fire on stage, No vulgarity in costume, movements or lyrics.</li>
+                            <li>Time: 5 + 1 mins. On stage</li>
+                            <li>Top 2 teams will be selected for finals on 8 to 9 Feb, 2019</li>
+                            <br>
+                            <i class="far fa-calendar-alt" ></i><span class="info">Saturday, 15th of December 2018</span>
+                            <br>
+                            <i class="fas fa-map-marker"></i><span class="info">Open Auditorium</span>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">      
+       <div class="col-sm-12 col-xl-6 col-md-12 col-lg-12 col-sm-10">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                    <img src="indianmusic2.JPG" style="width:600px;height:600px;">
+                    <div class="centered">INDIAN ELECTRIC MUSIC(GROUP)</div>
+                    </div>
+                    <div class="flip-card-back-three flip-card-back">
+                        <h1 align="center">INDIAN ELECTRIC MUSIC(GROUP)</h1> 
+                        <hr>
+                        <ul>
+                            <li>Maximum 10 members per team, Minimum of 5 members per team </li>
+                            <li>Medleys are not allowed, No backing tracks allowed or sequences.</li>
+                            <li>Beat/Drum/Percussion accompaniment through a keyboard is Not allowed.</li>
+                            <li>Growling is Not allowed</li>
+                            <li>Individual prizes for best own composition, best solo, best duet, best vocal group, and best instrumentalist (finals only - Inter Deanery </li>
+                            <li>Drum kit will be provided.</li>
+                            <li>Octopad or equivalent allowed but no sequencing is allowed.</li>
+                            <li>Time: 10 + 2 mins.</li>
+                            <li>Top 2 teams will be selected for finals on 8 to 9 Feb, 2019</li>
+                            <br>
+                            <i class="far fa-calendar-alt" ></i><span class="info">Monday, 17th of December 2018</span>
+                            <br>
+                            <i class="fas fa-map-marker"></i><span class="info">Open Auditorium</span>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+      </div>
+    <div class="col-sm-12 col-xl-6 col-md-12 col-lg-12 col-sm-10">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                <img src="western2.jpg" alt="Avatar" style="width:600px;height:600px;">
+                <div class="centered">WESTERN MUSIC - ELECTRIC</div>
+                </div>
+                <div class="flip-card-back-four flip-card-back">
+                <h1 align="center">WESTERN MUSIC - ELECTRIC</h1>
+                <hr>
+                    <ul>
+                        <li>Maximum 8 members per team.</li>
+                        <li>Minimum of 3 members per team (must include a vocalist)</li>
+                        <li>Growling NOT allowed</li>
+                        <li>Medleys are not allowed, No backing tracks allowed or sequences</li>
+                        <li>Beat/Drum/Percussion accompaniment through a keyboard is Not allowed</li>
+                        <li>Drum kit will be provided.</li>
+                        <li>Individual prizes for best vocalist, lead guitarist, best drummer, best bassist, best keyboardist and</li>
+                        <li>original song. (Finals only - Inter Deanery Competition).</li>
+                        <li>Time: 10 + 2 mins. On stage.</li>
+                        <li>Top 2 teams will be selected for finals on 8 to 9 Feb, 2019</li>
+
+                        <br>
+                            <i class="far fa-calendar-alt" ></i><span class="info">Monday, 17th of December 2018</span>
+                            <br>
+                            <i class="fas fa-map-marker"></i><span class="info">Open Auditorium</span>
+                    </ul>
+                </div>
+            </div>
+            </div>
+    </div>
+  </div>
+  <div class="row">      
+       <div class="col-sm-12 col-xl-12 col-md-12 col-lg-12 col-sm-10">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                <img src="Acapella.JPG" alt="Avatar" style="width:600px;height:600px;">
+                <div class="centered">WESTERN ACOUSTICS MUSIC(GROUP)</div>
+                </div>
+                <div class="flip-card-back-five flip-card-back">
+                <h1 align="center">WESTERN ACOUSTICS MUSIC(GROUP)</h1>
+                <hr>
+                    <ul>
+                        <li>Maximum 10 members per team (including a beat boxer)</li>
+                        <li>Minimum of 5 (including a beat boxer)</li>
+                        <li>Medleys are not allowed, No backing tracks allowed or sequences</li>
+                        <li>Keyboard allowed in Piano mode only. Plug in acoustic guitar and Acoustic percussion instruments like jembe also allowed.</li>
+                        <li>Time: 10 + 2 mins. On stage</li>
+                        <li>Top 2 teams will be selected for finals on 8 to 9 Feb, 2019</li>
+                        <br>
+                            <i class="far fa-calendar-alt" ></i><span class="info">Monday, 17th of December 2018</span>
+                            <br>
+                            <i class="fas fa-map-marker"></i><span class="info">Open Auditorium</span>
+                    </ul>
+                </div>
+            </div>
+            </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+        <script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage,0);
+}
+
+function showPage() {
+  
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+</body>
+</html>
